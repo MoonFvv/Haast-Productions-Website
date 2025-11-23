@@ -13,8 +13,11 @@ const Hero: React.FC = () => {
       {/* Metallic Paint Background Effect */}
       <MetallicBackground />
       
+      {/* Glassmorphism Background Overlay */}
+      <div className="absolute inset-0 bg-white/[0.02] backdrop-blur-[3px] pointer-events-none z-0" />
+      
       {/* Overlay to ensure text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-haast-black/90 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-haast-black/90 pointer-events-none z-0" />
 
       {/* Main Content */}
       <div className="relative z-10 text-center px-4 select-none">
@@ -59,7 +62,7 @@ const Hero: React.FC = () => {
       {/* Floating Elements */}
       <motion.div 
         style={{ y: y1, opacity: useTransform(scrollY, [0, 300], [1, 0]) }}
-        className="absolute bottom-32 w-full flex justify-between px-12 opacity-50 pointer-events-none"
+        className="absolute bottom-32 w-full flex justify-between px-12 opacity-50 pointer-events-none z-10"
       >
         <div className="hidden md:block font-sans text-xs tracking-widest text-haast-muted rotate-[-90deg]">
             EST. 2024
