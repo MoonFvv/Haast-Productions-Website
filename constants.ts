@@ -74,13 +74,13 @@ export const TEAM = [
     id: 3,
     name: "Alec Jungerius",
     role: "DOP",
-    image: "alec.webp",
+    image: "https://images.guns.lol/hRjBlMikwJmWHOrpR8hzcPXvHrdDuecJe5fiyoaFIXCwm.webp",
   },
   {
     id: 4,
     name: "Floris Vroegh",
     role: "Lead Editor",
-    image: "floris.png",
+    image: "https://i.guns.lol/atNWcg3eQ2GKOSZ1I12H4UsMVHemkiWJwl9TxW3y05ycp.png",
   },
   {
     id: 5,
@@ -111,7 +111,7 @@ export const PORTFOLIO_ITEMS = [
     title: "Kerst Commercial",
     category: "Commercials",
     year: "2025",
-    image: "kerstcommercial.png",
+    image: "https://i.guns.lol/mQXUe1ae7wxnQ3OMEPktYABdP54YBjYbjeikBqMQpm3lZ.png",
     description: "Een Kerst commercial",
     tags: ["Kerst", "Cinematic"]
   },
@@ -120,7 +120,7 @@ export const PORTFOLIO_ITEMS = [
     title: "The Lost Soldier",
     category: "Short Movie",
     year: "2024",
-    image: "kerstcommercial.png",
+    image: "https://i.guns.lol/mQXUe1ae7wxnQ3OMEPktYABdP54YBjYbjeikBqMQpm3lZ.png",
     description: "An avant-garde exploration of texture and light for Paris Fashion Week.",
     tags: ["Short Movie", "Experimental"]
   }
