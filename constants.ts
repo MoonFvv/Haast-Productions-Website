@@ -106,7 +106,7 @@ export const PORTFOLIO_ITEMS = [
     title: "Kerst Commercial",
     category: "Commercials",
     year: "2025",
-    image: "https://images.guns.lol/414e8b3a8b1aefd6c2209c1e20f080e4b83e51bf/mQXUe1ae7wxnQ3OMEPktYABdP54YBjYbjeikBqMQpm3lZ.png",
+    image: "kerstcommercial.png",
     description: "Een Kerst commercial",
     tags: ["Kerst", "Cinematic"]
   },
@@ -115,7 +115,7 @@ export const PORTFOLIO_ITEMS = [
     title: "The Lost Soldier",
     category: "Short Movie",
     year: "2024",
-    image: "https://images.guns.lol/414e8b3a8b1aefd6c2209c1e20f080e4b83e51bf/mQXUe1ae7wxnQ3OMEPktYABdP54YBjYbjeikBqMQpm3lZ.png",
+    image: "kerstcommercial.png",
     description: "An avant-garde exploration of texture and light for Paris Fashion Week.",
     tags: ["Short Movie", "Experimental"]
   }
