@@ -1,5 +1,5 @@
 
-import { Instagram, Linkedin, Twitter, ArrowUpRight, Play, Film, Monitor, Zap, Camera, Aperture, Disc, Cpu } from 'lucide-react';
+import { Instagram, Linkedin, Music, ArrowUpRight, Play, Film, Monitor, Zap, Camera, Aperture, Disc, Cpu } from 'lucide-react';
 
 export const ASSETS = {
   LOGO_TEXT: "HAAST",
