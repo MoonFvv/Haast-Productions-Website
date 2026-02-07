@@ -13,8 +13,8 @@ const About: React.FC = () => {
                 viewport={{ once: true }}
                 className="font-display font-bold text-4xl md:text-6xl text-white leading-tight mb-8"
             >
-                We produce <br/>
-                <span className="text-haast-accent">emotion</span> in motion.
+                Filming at the <br/>
+                <span className="text-haast-accent">speed</span> of ambition.
             </motion.h2>
         </div>
 

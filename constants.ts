@@ -62,46 +62,41 @@ export const TEAM = [
     id: 1,
     name: "Mels de Veer",
     role: "Director",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1887&auto=format&fit=crop",
+    image: "",
   },
   {
     id: 2,
     name: "Loek de Clonie Mclennan",
     role: "Writer",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop",
+    image: "loek.webp",
   },
   {
     id: 3,
     name: "Alec Jungerius",
     role: "DOP",
-    image: "https://images.guns.lol/hRjBlMikwJmWHOrpR8hzcPXvHrdDuecJe5fiyoaFIXCwm.webp",
+    image: "alec.webp",
   },
   {
     id: 4,
     name: "Floris Vroegh",
     role: "Lead Editor",
-    image: "https://images.guns.lol/414e8b3a8b1aefd6c2209c1e20f080e4b83e51bf/atNWcg3eQ2GKOSZ1I12H4UsMVHemkiWJwl9TxW3y05ycp.png",
+    image: "floris.webp",
   },
   {
     id: 5,
     name: "Anlaw Zondag",
     role: "Sound Designer",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1887&auto=format&fit=crop",
-  },
-  {
-    id: 6,
-    name: "Samuel Faber",        
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1888&auto=format&fit=crop",
+    image: "",
   },
   {
     id: 7,
     name: "Robin Senhorst",
-    image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80&w=1887&auto=format&fit=crop",
+    image: "robin.webp",
   },
   {
     id: 8,
     name: "Seppe Zwaan",
-    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1887&auto=format&fit=crop",
+    image: "",
   }
 ];
 
