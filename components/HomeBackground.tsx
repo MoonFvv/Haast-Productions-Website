@@ -12,11 +12,10 @@ const HomeBackground: React.FC = () => {
           playsInline
           className="absolute min-w-full min-h-full object-cover"
         >
-          <source src="/websitehomepager.webm" type="video/webm" />
+          <source src="/websitehomepager.mov" type="video/quicktime" />
         </video>
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/50 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-haast-black/90 pointer-events-none" />
+        {/* Light overlay for better text readability without darkening too much */}
+        <div className="absolute inset-0 bg-black/20 pointer-events-none" />
       </div>
     </>
   );

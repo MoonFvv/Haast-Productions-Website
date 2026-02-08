@@ -14,14 +14,14 @@ const Hero: React.FC = () => {
         autoPlay
         muted
         loop
-        className="absolute inset-0 w-full h-full object-cover z-0 opacity-40"
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
       >
-        <source src="/websitehomepager.webm" type="video/webm" />
+        <source src="/websitehomepager.mov" type="video/quicktime" />
       </video>
       
       {/* Glassmorphism Background Overlay (Hero-specific) */}
       <div className="absolute inset-0 bg-white/[0.02] backdrop-blur-[3px] pointer-events-none z-0" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-haast-black/90 pointer-events-none z-0" />
 
       {/* Main Content */}
       <div className="relative z-10 text-center px-4 select-none">
