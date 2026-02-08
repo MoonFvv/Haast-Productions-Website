@@ -68,19 +68,19 @@ export const TEAM = [
     id: 2,
     name: "Loek de Clonie Mclennan",
     role: "Writer",
-    image: "loek.jpeg",
+    image: "/loek.jpeg",
   },
   {
     id: 3,
     name: "Alec Jungerius",
     role: "DOP",
-    image: "alec.webp",
+    image: "/alec.webp",
   },
   {
     id: 4,
     name: "Floris Vroegh",
     role: "Lead Editor",
-    image: "floris.webp",
+    image: "/floris.webp",
   },
   {
     id: 5,
@@ -91,7 +91,7 @@ export const TEAM = [
   {
     id: 7,
     name: "Robin Senhorst",
-    image: "robin.webp",
+    image: "/robin.webp",
   },
   {
     id: 8,
@@ -104,18 +104,14 @@ export const PORTFOLIO_ITEMS = [
   {
     id: 1,
     title: "Kerst Commercial",
-    category: "Commercials",
-    year: "2025",
-    image: "kerstcommercial.webp",
+    image: "/kerstcommercial.webp",
     description: "Een Kerst commercial",
     tags: ["Kerst", "Cinematic"]
   },
   {
     id: 2,
     title: "The Lost Soldier",
-    category: "Short Movie",
-    year: "2024",
-    image: "kerstcommercial.webp",
+    image: "/kerstcommercial.webp",
     description: "An avant-garde exploration of texture and light for Paris Fashion Week.",
     tags: ["Short Movie", "Experimental"]
   }
