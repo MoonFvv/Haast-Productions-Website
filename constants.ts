@@ -106,7 +106,7 @@ export const PORTFOLIO_ITEMS = [
     title: "Kerst Commercial",
     category: "Commercials",
     year: "2025",
-    image: "kerstcommercial.png",
+    image: "kerstcommercial.webp",
     description: "Een Kerst commercial",
     tags: ["Kerst", "Cinematic"]
   },
@@ -115,7 +115,7 @@ export const PORTFOLIO_ITEMS = [
     title: "The Lost Soldier",
     category: "Short Movie",
     year: "2024",
-    image: "kerstcommercial.png",
+    image: "kerstcommercial.webp",
     description: "An avant-garde exploration of texture and light for Paris Fashion Week.",
     tags: ["Short Movie", "Experimental"]
   }
