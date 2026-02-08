@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion, useScroll, useTransform, Variants } from 'framer-motion';
-import MetallicBackground from './MetallicBackground';
 import BlurText from './BlurText';
 
 const Hero: React.FC = () => {
@@ -10,13 +9,18 @@ const Hero: React.FC = () => {
   return (
     <section id="home" className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-haast-black pt-20">
       
-      {/* Metallic Paint Background Effect */}
-      <MetallicBackground />
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-40"
+      >
+        <source src="/websitehomepager.webm" type="video/webm" />
+      </video>
       
-      {/* Glassmorphism Background Overlay */}
+      {/* Glassmorphism Background Overlay (Hero-specific) */}
       <div className="absolute inset-0 bg-white/[0.02] backdrop-blur-[3px] pointer-events-none z-0" />
-      
-      {/* Overlay to ensure text readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-haast-black/90 pointer-events-none z-0" />
 
       {/* Main Content */}
@@ -37,39 +41,42 @@ const Hero: React.FC = () => {
 
         {/* Replaced standard text with BlurText effect */}
         <div className="flex flex-col items-center">
-            <div className="font-display font-extrabold text-[12vw] leading-[0.85] text-white perspective-text mix-blend-overlay">
-                <BlurText text="HAAST" delay={0.5} />
-            </div>
+          <div className="font-display font-extrabold text-[12vw] leading-[0.85] text-white perspective-text mix-blend-overlay">
+            <BlurText text="HAAST" delay={0.5} />
+          </div>
             
-            <div className="mt-2 md:mt-4">
-                 <div className="font-display font-bold text-4xl md:text-6xl text-transparent text-outline tracking-tighter">
-                    <BlurText text="PRODUCTIONS" delay={1.2} direction="up" className="justify-center" />
-                 </div>
-            </div>
+          <div className="mt-2 md:mt-4">
+             <div className="font-display font-bold text-4xl md:text-6xl text-transparent text-outline tracking-tighter">
+              <BlurText text="PRODUCTIONS" delay={1.2} direction="up" className="justify-center" />
+             </div>
+          </div>
         </div>
 
         <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.2, duration: 1 }}
-            className="font-sans text-haast-muted text-sm md:text-base max-w-md mx-auto mt-12 leading-relaxed"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2.2, duration: 1 }}
+          className="font-sans text-haast-muted text-sm md:text-base max-w-md mx-auto mt-12 leading-relaxed"
         >
-            We define the new wave of cinematic storytelling.
-            <br className="hidden md:block"/> No rules. Just pure visual impact.
+          We define the new wave of cinematic storytelling.
+          <br className="hidden md:block"/> No rules. Just pure visual impact.
         </motion.p>
+
       </div>
 
-      {/* Floating Elements */}
-      <motion.div 
-        style={{ y: y1, opacity: useTransform(scrollY, [0, 300], [1, 0]) }}
-        className="absolute bottom-32 w-full flex justify-between px-12 opacity-50 pointer-events-none z-10"
+      {/* Scroll Indicator - Right Side */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 2.5, duration: 1 }}
+        className="hidden md:flex absolute right-8 top-1/2 -translate-y-1/2 flex-col items-center gap-2 z-10"
       >
-        <div className="hidden md:block font-sans text-xs tracking-widest text-haast-muted rotate-[-90deg]">
-            EST. 2024
-        </div>
-        <div className="hidden md:block font-sans text-xs tracking-widest text-haast-muted rotate-[90deg]">
-            SCROLL
-        </div>
+        <span className="font-sans text-xs tracking-widest text-haast-muted whitespace-nowrap">SCROLL</span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+          className="w-[1px] h-8 bg-gradient-to-b from-haast-accent to-transparent"
+        />
       </motion.div>
 
     </section>

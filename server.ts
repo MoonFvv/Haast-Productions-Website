@@ -21,7 +21,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // HTML template voor de email
-const getEmailTemplate = (email, phone, message) => `
+const getEmailTemplate = (email: string, phone?: string, message?: string): string => `
 <!DOCTYPE html>
 <html>
 <head>
@@ -151,6 +151,80 @@ app.post('/api/contact', async (req, res) => {
     console.error('Email error:', error);
     res.status(500).json({ error: 'Failed to send email' });
   }
+});
+
+const getAuditionTemplate = (data: { name: string; email: string; phone?: string; age?: string; role?: string; headshot?: string; showreel?: string; message?: string; }): string => `
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+                * { margin: 0; padding: 0; box-sizing: border-box; }
+                body { font-family: 'Monaco', monospace; background: #050505; color: #fff; }
+                .container { max-width: 600px; margin: 0 auto; background: #0a0a0a; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 20px; }
+                .header { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 30px; }
+                .logo { font-size: 24px; font-weight: bold; letter-spacing: 3px; color: #fff; margin-bottom: 10px; }
+                .content { margin: 30px 0; line-height: 1.6; }
+                .info { background: rgba(255,255,255,0.03); padding: 15px; border-radius: 6px; }
+                .row { margin-bottom: 10px; }
+                .label { color: #3b82f6; font-weight: bold; }
+                .value { color: #fff; }
+        </style>
+</head>
+<body>
+        <div class="container">
+                <div class="header">
+                        <div class="logo">HAAST</div>
+                        <div class="tagline">Nieuwe auditie-aanmelding</div>
+                </div>
+                <div class="content">
+                        <div class="info">
+                                <div class="row"><div class="label">Naam:</div><div class="value">${data.name}</div></div>
+                                <div class="row"><div class="label">E-mail:</div><div class="value">${data.email}</div></div>
+                                <div class="row"><div class="label">Telefoon:</div><div class="value">${data.phone || 'Niet opgegeven'}</div></div>
+                                <div class="row"><div class="label">Leeftijd:</div><div class="value">${data.age || 'Niet opgegeven'}</div></div>
+                                <div class="row"><div class="label">Rol / typecasting:</div><div class="value">${data.role || 'Niet opgegeven'}</div></div>
+                                <div class="row"><div class="label">Headshot:</div><div class="value">${data.headshot || 'Geen'}</div></div>
+                                <div class="row"><div class="label">Showreel:</div><div class="value">${data.showreel || 'Geen'}</div></div>
+                                <div class="row"><div class="label">Bericht:</div><div class="value">${data.message || 'Geen'}</div></div>
+                        </div>
+                </div>
+                <div class="footer" style="margin-top:20px; font-size:11px; color:rgba(255,255,255,0.3);">© 2025 HAAST Productions</div>
+        </div>
+</body>
+</html>
+`;
+
+// Audition form endpoint
+app.post('/api/audition', async (req, res) => {
+    const { name, email, phone, age, role, headshot, showreel, message } = req.body;
+
+    if (!name || !email) {
+        return res.status(400).json({ error: 'Name and email are required' });
+    }
+
+    try {
+        await transporter.sendMail({
+            from: 'info@haastproductions.com',
+            to: 'info@haastproductions.com',
+            subject: `Nieuwe auditie-aanmelding: ${name}`,
+            html: getAuditionTemplate({ name, email, phone, age, role, headshot, showreel, message }),
+            replyTo: email,
+        });
+
+        await transporter.sendMail({
+            from: 'info@haastproductions.com',
+            to: email,
+            subject: 'We ontvingen je auditie-aanmelding - HAAST',
+            html: `<p>Hi ${name},</p><p>Bedankt voor je aanmelding voor een auditie. We hebben je gegevens ontvangen en nemen zo snel mogelijk contact met je op.</p><p>— HAAST Team</p>`,
+        });
+
+        res.status(200).json({ success: true });
+    } catch (err) {
+        console.error('Audition error:', err);
+        res.status(500).json({ error: 'Failed to send audition email' });
+    }
 });
 
 const PORT = process.env.PORT || 3001;

@@ -7,9 +7,9 @@ export const ASSETS = {
 
 export const NAV_LINKS = [
   { name: 'Work', href: '#work' },
-  { name: 'Studio', href: '#about' },
-  { name: 'Gear', href: '#gear' },
-  { name: 'Team', href: '#team' },
+  { name: 'Gear', href: '/gear' },
+  { name: 'Team', href: '/team' },
+  { name: 'Auditie', href: '/audition' },
 ];
 
 export const GEAR_CATEGORIES = [

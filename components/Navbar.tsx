@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { NAV_LINKS } from '../constants';
-import { Mail, Home } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Home } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   return (
@@ -23,30 +24,42 @@ const Navbar: React.FC = () => {
         {/* Content */}
         <div className="relative px-2 py-1 flex items-center gap-1 z-10">
             {/* Logo Icon - Home */}
-            <a href="#home" className="w-10 h-10 bg-haast-black/80 rounded-full flex items-center justify-center text-white mr-2 border border-white/10 hover:bg-haast-accent transition-colors duration-300">
-                <Home size={18} />
-            </a>
+            <Link to={{ pathname: '/', hash: '#home' }} className="w-10 h-10 bg-haast-black/80 rounded-full flex items-center justify-center text-white mr-2 border border-white/10 hover:bg-haast-accent transition-colors duration-300">
+              <Home size={18} />
+            </Link>
 
             {/* Links */}
             <div className="flex items-center">
                 {NAV_LINKS.map((link) => (
-                    <a 
-                        key={link.name} 
+                    link.href && link.href.startsWith('/') ? (
+                      <Link
+                        key={link.name}
+                        to={link.href}
+                        className="relative px-5 py-2 rounded-full font-sans text-xs font-medium text-white/80 hover:text-white hover:bg-white/10 transition-all duration-300"
+                      >
+                        {link.name}
+                      </Link>
+                    ) : link.href && link.href.startsWith('#') ? (
+                      <Link
+                        key={link.name}
+                        to={{ pathname: '/', hash: link.href }}
+                        className="relative px-5 py-2 rounded-full font-sans text-xs font-medium text-white/80 hover:text-white hover:bg-white/10 transition-all duration-300"
+                      >
+                        {link.name}
+                      </Link>
+                    ) : (
+                      <a
+                        key={link.name}
                         href={link.href}
                         className="relative px-5 py-2 rounded-full font-sans text-xs font-medium text-white/80 hover:text-white hover:bg-white/10 transition-all duration-300"
-                    >
+                      >
                         {link.name}
-                    </a>
+                      </a>
+                    )
                 ))}
             </div>
 
-            {/* CTA - Contact */}
-            <a href="#contact" className="group/cta ml-2 w-40 h-10 bg-haast-accent text-white rounded-full flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition-all duration-300">
-                <Mail size={16} className="transition-transform duration-300 group-hover/cta:rotate-12 flex-shrink-0" />
-                <span className="font-mono text-xs font-bold uppercase whitespace-nowrap">
-                    Neem Contact Op
-                </span>
-            </a>
+
         </div>
       </motion.nav>
     </div>
