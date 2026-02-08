@@ -68,7 +68,7 @@ export const TEAM = [
     id: 2,
     name: "Loek de Clonie Mclennan",
     role: "Writer",
-    image: "loek.webp",
+    image: "loek.jpeg",
   },
   {
     id: 3,
