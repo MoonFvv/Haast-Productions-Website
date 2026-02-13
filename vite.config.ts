@@ -7,7 +7,14 @@ export default defineConfig({
   base: './', // Ensures assets are linked correctly on GitHub Pages
   build: {
     outDir: 'dist',
-    sourcemap: false
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'framer-motion', 'three', '@react-three/fiber', '@react-three/drei'],
+        },
+      },
+    }
   },
   server: {
     port: 3000

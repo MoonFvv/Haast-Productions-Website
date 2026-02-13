@@ -8,35 +8,27 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-haast-black pt-20">
-      
+
       {/* Video Background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      >
-        <source src="/websitehomepager.mov" type="video/quicktime" />
-      </video>
-      
+
+
       {/* Glassmorphism Background Overlay (Hero-specific) */}
       <div className="absolute inset-0 bg-white/[0.02] backdrop-blur-[3px] pointer-events-none z-0" />
 
       {/* Main Content */}
       <div className="relative z-10 text-center px-4 select-none">
-        
+
         <motion.div
-            initial={{ opacity: 0, width: 0 }}
-            animate={{ opacity: 1, width: "auto" }}
-            transition={{ duration: 1, ease: "circOut", delay: 0.2 }}
-            className="flex items-center justify-center gap-4 mb-8 whitespace-nowrap overflow-hidden mx-auto"
+          initial={{ opacity: 0, width: 0 }}
+          animate={{ opacity: 1, width: "auto" }}
+          transition={{ duration: 1, ease: "circOut", delay: 0.2 }}
+          className="flex items-center justify-center gap-4 mb-8 whitespace-nowrap overflow-hidden mx-auto"
         >
-            <span className="h-[1px] w-8 bg-haast-accent"></span>
-            <span className="font-sans text-xs font-bold tracking-[0.3em] text-haast-accent uppercase">
-                Visual Alchemy
-            </span>
-            <span className="h-[1px] w-8 bg-haast-accent"></span>
+          <span className="h-[1px] w-8 bg-haast-accent"></span>
+          <span className="font-sans text-xs font-bold tracking-[0.3em] text-haast-accent uppercase">
+            Visual Alchemy
+          </span>
+          <span className="h-[1px] w-8 bg-haast-accent"></span>
         </motion.div>
 
         {/* Replaced standard text with BlurText effect */}
@@ -44,11 +36,11 @@ const Hero: React.FC = () => {
           <div className="font-display font-extrabold text-[12vw] leading-[0.85] text-white perspective-text mix-blend-overlay">
             <BlurText text="HAAST" delay={0.5} />
           </div>
-            
+
           <div className="mt-2 md:mt-4">
-             <div className="font-display font-bold text-4xl md:text-6xl text-transparent text-outline tracking-tighter">
+            <div className="font-display font-bold text-4xl md:text-6xl text-transparent text-outline tracking-tighter">
               <BlurText text="PRODUCTIONS" delay={1.2} direction="up" className="justify-center" />
-             </div>
+            </div>
           </div>
         </div>
 
@@ -59,7 +51,7 @@ const Hero: React.FC = () => {
           className="font-sans text-haast-muted text-sm md:text-base max-w-md mx-auto mt-12 leading-relaxed"
         >
           We define the new wave of cinematic storytelling.
-          <br className="hidden md:block"/> No rules. Just pure visual impact.
+          <br className="hidden md:block" /> No rules. Just pure visual impact.
         </motion.p>
 
       </div>
