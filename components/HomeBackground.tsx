@@ -12,7 +12,7 @@ const HomeBackground: React.FC = () => {
           playsInline
           className="absolute min-w-full min-h-full object-cover"
         >
-          <source src="/websitehomepager.webm" type="video/webm" />
+          <source src="/kerstcommercial.webp" type="video/webp" />
         </video>
         {/* Light overlay for better text readability without darkening too much */}
         <div className="absolute inset-0 bg-black/20 pointer-events-none" />

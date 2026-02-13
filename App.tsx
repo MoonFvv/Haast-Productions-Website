@@ -8,7 +8,7 @@ import TeamPage from './pages/TeamPage';
 import ShortFilm from './pages/ShortFilm';
 import Footer from './components/Footer';
 import { useLocation } from 'react-router-dom';
-import HomeBackground from './components/HomeBackground';
+
 
 function App() {
   const location = useLocation();
@@ -17,7 +17,7 @@ function App() {
     // Allow scrolling on home page, disable on other pages that need it
     if (location.pathname === '/') {
       document.body.style.overflow = 'auto';
-      
+
       if (location.hash) {
         const id = location.hash.replace('#', '');
         // Delay slightly so the DOM can mount
@@ -36,9 +36,9 @@ function App() {
     }
   }, [location]);
   return (
-    <div className="bg-haast-black min-h-screen text-haast-text font-sans selection:bg-haast-accent selection:text-white">
+    <div className={`min-h-screen text-haast-text font-sans selection:bg-haast-accent selection:text-white ${location.pathname === '/' ? '' : 'bg-haast-black'}`}>
       <Navbar />
-      {location.pathname === '/' && <HomeBackground />}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gear" element={<GearPage />} />

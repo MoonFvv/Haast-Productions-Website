@@ -7,9 +7,19 @@ const Hero: React.FC = () => {
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
 
   return (
-    <section id="home" className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-haast-black pt-20">
+    <section id="home" className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden pt-20">
 
       {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src="/websitehomepager.mp4" type="video/mp4" />
+      </video>
 
 
       {/* Glassmorphism Background Overlay (Hero-specific) */}
