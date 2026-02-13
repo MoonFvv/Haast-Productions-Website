@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haast Productions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/hitmaker" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+              display: ['Hitmaker', 'sans-serif'],
+            },
+            colors: {
+              haast: {
+                black: '#020202', 
+                panel: '#111111',
+                accent: '#3b82f6',
+                text: '#ECECEC',
+                muted: '#666666',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #020202;
+        color: #ECECEC;
+        overflow-x: hidden;
+        font-family: 'Poppins', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6, .font-display {
+        font-family: 'Hitmaker', sans-serif;
+      }
+      ::selection {
+        background: #3b82f6;
+        color: #ffffff;
+      }
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+      .text-outline {
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+        color: transparent;
+      }
+      .animate-fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .animate-fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .perspective-text {
+        transform-style: preserve-3d;
+      }
+      @keyframes scan {
+        0% { top: -10%; }
+        100% { top: 110%; }
+      }
+      .animate-scan {
+        animation: scan 3s linear infinite;
+      }
+      @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 8s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="fixed bottom-8 left-0 w-full z-50 flex justify-center pointer-events-none">
+      <nav class="relative group pointer-events-auto">
+        <div class="absolute inset-0 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 overflow-hidden shadow-2xl">
+          <div class="absolute top-0 left-0 w-24 h-24 bg-haast-accent/30 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
+          <div class="absolute bottom-0 right-0 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl translate-x-1/2 translate-y-1/2 animate-pulse" style="animation-delay: 1s;"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12 -translate-x-[200%] group-hover:translate-x-[200%] transition-transform duration-1000 ease-in-out"></div>
+        </div>
+        <div class="relative px-2 py-1 flex items-center gap-1 z-10">
+          <a href="#home" class="w-10 h-10 bg-haast-black/80 rounded-full flex items-center justify-center text-white mr-2 border border-white/10 hover:bg-haast-accent transition-colors duration-300">
+            <i data-lucide="home" size="18"></i>
+          </a>
+          <a href="#work" class="relative px-5 py-2 rounded-full font-sans text-xs font-medium text-white/80 hover:text-white hover:bg-white/10 transition-all duration-300">
+            Work
+          </a>
+          <a href="/gear.html" class="relative px-5 py-2 rounded-full font-sans text-xs font-medium text-white/80 hover:text-white hover:bg-white/10 transition-all duration-300">
+            Gear
+          </a>
+          <a href="/team.html" class="relative px-5 py-2 rounded-full font-sans text-xs font-medium text-white/80 hover:text-white hover:bg-white/10 transition-all duration-300">
+            Team
+          </a>
+          <a href="/audition.html" class="relative px-5 py-2 rounded-full font-sans text-xs font-medium text-white/80 hover:text-white hover:bg-white/10 transition-all duration-300">
+            Auditie
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <main>
+      <!-- Hero Section with Video Background -->
+      <section id="home" class="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-haast-black pt-20">
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+          <source src="websitehomepager.mov" type="video/quicktime" />
+        </video>
+        <div class="absolute inset-0 bg-white/[0.02] backdrop-blur-[3px] pointer-events-none z-0"></div>
+        
+        <div class="relative z-10 text-center px-4 select-none">
+          <div class="flex items-center justify-center gap-4 mb-8 whitespace-nowrap overflow-hidden mx-auto">
+            <span class="h-[1px] w-8 bg-haast-accent"></span>
+            <span class="font-sans text-xs font-bold tracking-[0.3em] text-haast-accent uppercase">
+              Visual Alchemy
+            </span>
+            <span class="h-[1px] w-8 bg-haast-accent"></span>
+          </div>
+          
+          <div class="flex flex-col items-center">
+            <div class="font-display font-extrabold text-[12vw] leading-[0.85] text-white perspective-text mix-blend-overlay">
+              <span class="inline-block animate-fade-in" style="transition-delay: 0.1s;">HAAST</span>
+            </div>
+            <div class="mt-2 md:mt-4">
+              <div class="font-display font-bold text-4xl md:text-6xl text-transparent text-outline tracking-tighter">
+                <span class="inline-block animate-fade-in" style="transition-delay: 0.3s;">PRODUCTIONS</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="font-sans text-haast-muted text-sm md:text-base max-w-md mx-auto mt-12 leading-relaxed animate-fade-in" style="transition-delay: 0.5s;">
+            We define the new wave of cinematic storytelling.
+            <br class="hidden md:block"/> No rules. Just pure visual impact.
+          </p>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="hidden md:flex absolute right-8 top-1/2 -translate-y-1/2 flex-col items-center gap-2 z-10">
+          <span class="font-sans text-xs tracking-widest text-haast-muted whitespace-nowrap">SCROLL</span>
+          <div class="w-[1px] h-8 bg-gradient-to-b from-haast-accent to-transparent animate-bounce"></div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-24 md:py-40 px-6 bg-haast-panel relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="font-display font-bold text-4xl md:text-6xl text-white leading-tight mb-8 animate-fade-in">
+              Filming at the <br/>
+              <span class="text-haast-accent">speed</span> of ambition.
+            </h2>
+          </div>
+          <div>
+            <p class="font-sans text-haast-muted text-lg md:text-xl leading-relaxed mb-6 animate-fade-in">
+              Haast Productions is a new-age creative studio. We moved away from traditional agency models to create something faster, bolder, and more authentic.
+            </p>
+            <p class="font-sans text-haast-muted text-base leading-relaxed animate-fade-in">
+              Whether it's the intense action of <em>Urban Heat</em> or the quiet drama of <em>The Lost Soldier</em>, we apply cinematic rigor to every frame. No filler. No fluff. Just story.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Section -->
+      <section id="work" class="bg-haast-black relative min-h-screen py-24 md:py-32">
+        <div class="max-w-[1800px] mx-auto px-4 md:px-8">
+          <div class="mb-16 md:mb-32 px-2 md:px-4">
+            <div class="flex items-center gap-4 mb-4 animate-fade-in">
+              <div class="w-2 h-2 bg-haast-accent animate-pulse rounded-full"></div>
+              <span class="font-mono text-xs tracking-[0.2em] text-haast-accent uppercase">
+                Select Archive
+              </span>
+            </div>
+            <h2 class="font-display font-bold text-5xl md:text-8xl text-white leading-[0.85] tracking-tight animate-fade-in">
+              VISUAL <span class="text-outline md:ml-4">RECORDS</span>
+            </h2>
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-8 lg:gap-20">
+            <!-- Left Column - Project List -->
+            <div class="w-full md:w-5/12 flex flex-col gap-24 md:gap-48 pb-24 md:pb-96 pt-0 md:pt-12 order-2 md:order-1">
+              <!-- Project 1 -->
+              <div class="project-item group relative animate-fade-in" data-index="0">
+                <div class="block md:hidden mb-6 rounded-xl overflow-hidden aspect-video border border-white/10 relative">
+                  <img src="kerstcommercial.png" alt="Kerst Commercial" class="w-full h-full object-cover">
+                  <div class="absolute inset-0 bg-black/20"></div>
+                  <div class="absolute top-2 right-2 px-2 py-1 bg-black/60 backdrop-blur rounded border border-white/10">
+                    <span class="font-mono text-[10px] text-haast-accent">REC</span>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-6 p-6 md:p-10 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors duration-500 backdrop-blur-sm">
+                  <div class="flex items-center justify-between border-b border-white/5 pb-4">
+                    <div class="flex gap-2">
+                      <span class="px-2 py-1 rounded-sm bg-white/5 text-[10px] font-mono uppercase text-haast-muted">Kerst</span>
+                      <span class="px-2 py-1 rounded-sm bg-white/5 text-[10px] font-mono uppercase text-haast-muted">Cinematic</span>
+                    </div>
+                    <span class="font-mono text-xs text-white/30">2025</span>
+                  </div>
+                  <div>
+                    <h3 class="font-display font-bold text-4xl md:text-6xl text-white uppercase mb-2 group-hover:text-haast-accent transition-colors duration-300">
+                      Kerst Commercial
+                    </h3>
+                    <div class="flex items-center gap-2 text-haast-accent/60 font-mono text-xs tracking-wider">
+                      <span class="w-4 h-[1px] bg-haast-accent/60"></span>
+                      Commercials
+                    </div>
+                  </div>
+                  <p class="font-sans text-haast-muted leading-relaxed text-sm md:text-base max-w-md">
+                    Een Kerst commercial
+                  </p>
+                  <div class="pt-4">
+                    <button class="flex items-center gap-3 text-white/60 hover:text-white group-hover:gap-6 transition-all duration-300">
+                      <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center bg-transparent group-hover:bg-haast-accent group-hover:border-haast-accent group-hover:text-black transition-all">
+                        <i data-lucide="arrow-up-right" size="18"></i>
+                      </div>
+                      <span class="font-mono text-xs uppercase tracking-widest">View Case Study</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 2 -->
+              <div class="project-item group relative animate-fade-in" data-index="1">
+                <div class="block md:hidden mb-6 rounded-xl overflow-hidden aspect-video border border-white/10 relative">
+                  <img src="kerstcommercial.png" alt="The Lost Soldier" class="w-full h-full object-cover">
+                  <div class="absolute inset-0 bg-black/20"></div>
+                  <div class="absolute top-2 right-2 px-2 py-1 bg-black/60 backdrop-blur rounded border border-white/10">
+                    <span class="font-mono text-[10px] text-haast-accent">REC</span>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-6 p-6 md:p-10 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors duration-500 backdrop-blur-sm">
+                  <div class="flex items-center justify-between border-b border-white/5 pb-4">
+                    <div class="flex gap-2">
+                      <span class="px-2 py-1 rounded-sm bg-white/5 text-[10px] font-mono uppercase text-haast-muted">Short Movie</span>
+                      <span class="px-2 py-1 rounded-sm bg-white/5 text-[10px] font-mono uppercase text-haast-muted">Experimental</span>
+                    </div>
+                    <span class="font-mono text-xs text-white/30">2024</span>
+                  </div>
+                  <div>
+                    <h3 class="font-display font-bold text-4xl md:text-6xl text-white uppercase mb-2 group-hover:text-haast-accent transition-colors duration-300">
+                      The Lost Soldier
+                    </h3>
+                    <div class="flex items-center gap-2 text-haast-accent/60 font-mono text-xs tracking-wider">
+                      <span class="w-4 h-[1px] bg-haast-accent/60"></span>
+                      Short Movie
+                    </div>
+                  </div>
+                  <p class="font-sans text-haast-muted leading-relaxed text-sm md:text-base max-w-md">
+                    An avant-garde exploration of texture and light for Paris Fashion Week.
+                  </p>
+                  <div class="pt-4">
+                    <button class="flex items-center gap-3 text-white/60 hover:text-white group-hover:gap-6 transition-all duration-300">
+                      <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center bg-transparent group-hover:bg-haast-accent group-hover:border-haast-accent group-hover:text-black transition-all">
+                        <i data-lucide="arrow-up-right" size="18"></i>
+                      </div>
+                      <span class="font-mono text-xs uppercase tracking-widest">View Case Study</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column - Sticky Preview -->
+            <div class="hidden md:block w-7/12 h-[80vh] sticky top-24 order-1 md:order-2">
+              <div class="w-full h-full relative rounded-lg border border-white/10 bg-[#080808] overflow-hidden group">
+                <div class="absolute inset-0 z-20 pointer-events-none p-6 flex flex-col justify-between">
+                  <div class="flex justify-between items-start">
+                    <div class="flex flex-col gap-1">
+                      <div class="flex items-center gap-2 text-haast-accent/80">
+                        <i data-lucide="crosshair" size="20" class="animate-spin-slow"></i>
+                        <span class="font-mono text-[10px] tracking-widest">TRGT_LOCKED</span>
+                      </div>
+                      <span class="font-mono text-[10px] text-white/40">ISO 800 • 1/50 • 4K RAW</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <div class="px-2 py-1 border border-white/20 rounded bg-black/50 backdrop-blur-sm">
+                        <span class="font-mono text-[10px] text-white/80">REC</span>
+                        <span class="ml-2 w-2 h-2 bg-red-500 rounded-full inline-block animate-pulse"></span>
+                      </div>
+                      <i data-lucide="maximize-2" size="16" class="text-white/40"></i>
+                    </div>
+                  </div>
+                  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-white/5 rounded-full flex items-center justify-center">
+                    <div class="w-1 h-1 bg-white/50 rounded-full"></div>
+                  </div>
+                  <div class="absolute top-1/2 left-4 w-1 h-12 bg-white/10 rounded-full">
+                    <div class="w-full h-1/2 bg-haast-accent/80 rounded-full"></div>
+                  </div>
+                  <div class="flex justify-between items-end">
+                    <div class="flex gap-8">
+                      <div>
+                        <span class="block font-mono text-[9px] text-white/30 uppercase mb-1">Coordinates</span>
+                        <span class="block font-mono text-xs text-white/80">34.0522° N, 118.2437° W</span>
+                      </div>
+                      <div>
+                        <span class="block font-mono text-[9px] text-white/30 uppercase mb-1">Drone Link</span>
+                        <span class="flex items-center gap-2 font-mono text-xs text-haast-accent">
+                          <i data-lucide="aperture" size="12" class="animate-spin"></i> ONLINE
+                        </span>
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <span class="font-display text-4xl text-white/10 font-bold" id="project-number">01</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="absolute inset-0 z-10">
+                  <img id="preview-image" src="kerstcommercial.png" alt="Project Preview" class="w-full h-full object-cover grayscale contrast-125 transition-all duration-700">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+                  <div class="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+                  <div class="absolute left-0 right-0 h-2 bg-white/10 blur-[1px] z-30 pointer-events-none animate-scan"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section id="team" class="py-20 md:py-24 bg-haast-black border-t border-white/5 relative">
+        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none"></div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+          <div class="flex flex-col items-center mb-16 animate-fade-in">
+            <span class="font-mono text-[10px] text-haast-accent tracking-[0.3em] uppercase mb-4">
+              Active Personnel
+            </span>
+            <h2 class="font-display font-bold text-4xl md:text-6xl text-white tracking-tight">
+              THE SQUAD
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Team Member 1 -->
+            <div class="group relative cursor-pointer animate-fade-in">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-sm border border-white/10 group-hover:border-haast-accent/50 transition-all duration-500">
+                <div class="w-full h-full bg-haast-panel"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-500"></div>
+                <div class="absolute top-0 w-full h-[1px] bg-haast-accent/50 opacity-0 group-hover:opacity-100 group-hover:top-[120%] transition-all duration-[1.5s] ease-linear"></div>
+                <div class="absolute bottom-0 left-0 w-full p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  <p class="font-mono text-[8px] text-haast-accent mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">ID_01</p>
+                  <h4 class="font-display font-bold text-lg text-white uppercase leading-none mb-1">Mels de Veer</h4>
+                  <p class="font-sans text-[10px] text-white/50 tracking-wider uppercase">Director</p>
+                </div>
+              </div>
+              <div class="absolute -top-1 -left-1 w-1.5 h-1.5 border-t border-l border-white/20 group-hover:border-haast-accent transition-colors duration-300"></div>
+              <div class="absolute -bottom-1 -right-1 w-1.5 h-1.5 border-b border-r border-white/20 group-hover:border-haast-accent transition-colors duration-300"></div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="group relative cursor-pointer animate-fade-in" style="transition-delay: 0.05s;">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-sm border border-white/10 group-hover:border-haast-accent/50 transition-all duration-500">
+                <img src="loek.jpeg" alt="Loek de Clonie Mclennan" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-500"></div>
+                <div class="absolute top-0 w-full h-[1px] bg-haast-accent/50 opacity-0 group-hover:opacity-100 group-hover:top-[120%] transition-all duration-[1.5s] ease-linear"></div>
+                <div class="absolute bottom-0 left-0 w-full p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  <p class="font-mono text-[8px] text-haast-accent mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">ID_02</p>
+                  <h4 class="font-display font-bold text-lg text-white uppercase leading-none mb-1">Loek de Clonie Mclennan</h4>
+                  <p class="font-sans text-[10px] text-white/50 tracking-wider uppercase">Writer</p>
+                </div>
+              </div>
+              <div class="absolute -top-1 -left-1 w-1.5 h-1.5 border-t border-l border-white/20 group-hover:border-haast-accent transition-colors duration-300"></div>
+              <div class="absolute -bottom-1 -right-1 w-1.5 h-1.5 border-b border-r border-white/20 group-hover:border-haast-accent transition-colors duration-300"></div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="group relative cursor-pointer animate-fade-in" style="transition-delay: 0.1s;">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-sm border border-white/10 group-hover:border-haast-accent/50 transition-all duration-500">
+                <img src="alec.webp" alt="Alec Jungerius" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-500"></div>
+                <div class="absolute top-0 w-full h-[1px] bg-haast-accent/50 opacity-0 group-hover:opacity-100 group-hover:top-[120%] transition-all duration-[1.5s] ease-linear"></div>
+                <div class="absolute bottom-0 left-0 w-full p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  <p class="font-mono text-[8px] text-haast-accent mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">ID_03</p>
+                  <h4 class="font-display font-bold text-lg text-white uppercase leading-none mb-1">Alec Jungerius</h4>
+                  <p class="font-sans text-[10px] text-white/50 tracking-wider uppercase">DOP</p>
+                </div>
+              </div>
+              <div class="absolute -top-1 -left-1 w-1.5 h-1.5 border-t border-l border-white/20 group-hover:border-haast-accent transition-colors duration-300"></div>
+              <div class="absolute -bottom-1 -right-1 w-1.5 h-1.5 border-b border-r border-white/20 group-hover:border-haast-accent transition-colors duration-300"></div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="group relative cursor-pointer animate-fade-in" style="transition-delay: 0.15s;">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-sm border border-white/10 group-hover:border-haast-accent/50 transition-all duration-500">
+                <img src="floris.webp" alt="Floris Vroegh" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-500"></div>
+                <div class="absolute top-0 w-full h-[1px] bg-haast-accent/50 opacity-0 group-hover:opacity-100 group-hover:top-[120%] transition-all duration-[1.5s] ease-linear"></div>
+                <div class="absolute bottom-0 left-0 w-full p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  <p class="font-mono text-[8px] text-haast-accent mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">ID_04</p>
+                  <h4 class="font-display font-bold text-lg text-white uppercase leading-none mb-1">Floris Vroegh</h4>
+                  <p class="font-sans text-[10px] text-white/50 tracking-wider uppercase">Lead Editor</p>
+                </div>
+              </div>
+              <div class="absolute -top-1 -left-1 w-1.5 h-1.5 border-t border-l border-white/20 group-hover:border-haast-accent transition-colors duration-300"></div>
+              <div class="absolute -bottom-1 -right-1 w-1.5 h-1.5 border-b border-r border-white/20 group-hover:border-haast-accent transition-colors duration-300"></div>
+            </div>
+
+            <!-- Team Member 5 -->
+            <div class="group relative cursor-pointer animate-fade-in" style="transition-delay: 0.2s;">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-sm border border-white/10 group-hover:border-haast-accent/50 transition-all duration-500">
+                <div class="w-full h-full bg-haast-panel"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-500"></div>
+                <div class="absolute top-0 w-full h-[1px] bg-haast-accent/50 opacity-0 group-hover:opacity-100 group-hover:top-[120%] transition-all duration-[1.5s] ease-linear"></div>
+                <div class="absolute bottom-0 left-0 w-full p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  <p class="font-mono text-[8px] text-haast-accent mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">ID_05</p>
+                  <h4 class="font-display font-bold text-lg text-white uppercase leading-none mb-1">Anlaw Zondag</h4>
+                  <p class="font-sans text-[10px] text-white/50 tracking-wider uppercase">Sound Designer</p>
+                </div>
+              </div>
+              <div class="absolute -top-1 -left-1 w-1.5 h-1.5 border-t border-l border-white/20 group-hover:border-haast-accent transition-colors duration-300"></div>
+              <div class="absolute -bottom-1 -right-1 w-1.5 h-1.5 border-b border-r border-white/20 group-hover:border-haast-accent transition-colors duration-300"></div>
+            </div>
+
+            <!-- Team Member 6 -->
+            <div class="group relative cursor-pointer animate-fade-in" style="transition-delay: 0.25s;">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-sm border border-white/10 group-hover:border-haast-accent/50 transition-all duration-500">
+                <img src="robin.webp" alt="Robin Senhorst" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-500"></div>
+                <div class="absolute top-0 w-full h-[1px] bg-haast-accent/50 opacity-0 group-hover:opacity-100 group-hover:top-[120%] transition-all duration-[1.5s] ease-linear"></div>
+                <div class="absolute bottom-0 left-0 w-full p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  <p class="font-mono text-[8px] text-haast-accent mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">ID_07</p>
+                  <h4 class="font-display font-bold text-lg text-white uppercase leading-none mb-1">Robin Senhorst</h4>
+                </div>
+              </div>
+              <div class="absolute -top-1 -left-1 w-1.5 h-1.5 border-t border-l border-white/20 group-hover:border-haast-accent transition-colors duration-300"></div>
+              <div class="absolute -bottom-1 -right-1 w-1.5 h-1.5 border-b border-r border-white/20 group-hover:border-haast-accent transition-colors duration-300"></div>
+            </div>
+
+            <!-- Team Member 7 -->
+            <div class="group relative cursor-pointer animate-fade-in" style="transition-delay: 0.3s;">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-sm border border-white/10 group-hover:border-haast-accent/50 transition-all duration-500">
+                <div class="w-full h-full bg-haast-panel"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-500"></div>
+                <div class="absolute top-0 w-full h-[1px] bg-haast-accent/50 opacity-0 group-hover:opacity-100 group-hover:top-[120%] transition-all duration-[1.5s] ease-linear"></div>
+                <div class="absolute bottom-0 left-0 w-full p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  <p class="font-mono text-[8px] text-haast-accent mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">ID_08</p>
+                  <h4 class="font-display font-bold text-lg text-white uppercase leading-none mb-1">Seppe Zwaan</h4>
+                </div>
+              </div>
+              <div class="absolute -top-1 -left-1 w-1.5 h-1.5 border-t border-l border-white/20 group-hover:border-haast-accent transition-colors duration-300"></div>
+              <div class="absolute -bottom-1 -right-1 w-1.5 h-1.5 border-b border-r border-white/20 group-hover:border-haast-accent transition-colors duration-300"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <footer id="contact" class="bg-[#050505] py-12 sm:py-16 px-4 sm:px-6 border-t border-white/5 relative">
+        <div class="max-w-5xl mx-auto relative z-10">
+          <div class="flex flex-col gap-12 sm:gap-12 md:gap-24 md:flex-row items-start justify-between">
+            <!-- Left: Branding -->
+            <div class="w-full md:w-1/3 order-2 md:order-1">
+              <h2 class="font-display font-bold text-2xl sm:text-3xl text-white mb-2 uppercase tracking-wide animate-fade-in">
+                HAAST
+              </h2>
+              <p class="font-sans text-haast-muted text-xs leading-relaxed mb-6 animate-fade-in">
+                Visual alchemy for the digital age.
+              </p>
+              <a href="mailto:info@haastproductions.com" class="inline-flex items-center gap-2 font-mono text-xs sm:text-sm text-white hover:text-haast-accent transition-colors group mb-6 break-all animate-fade-in">
+                info@haastproductions.com
+                <i data-lucide="arrow-up-right" size="12" class="opacity-50 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform flex-shrink-0"></i>
+              </a>
+              <div class="flex gap-4 animate-fade-in">
+                <a href="#" class="text-white/30 hover:text-white transition-colors"><i data-lucide="instagram" size="16"></i></a>
+                <a href="#" class="text-white/30 hover:text-white transition-colors"><i data-lucide="youtube" size="16"></i></a>
+                <a href="#" class="text-white/30 hover:text-white transition-colors"><i data-lucide="music" size="16"></i></a>
+                <a href="#" class="text-white/30 hover:text-white transition-colors"><i data-lucide="linkedin" size="16"></i></a>
+              </div>
+            </div>
+
+            <!-- Right: Contact Form -->
+            <div class="w-full md:w-2/3 order-1 md:order-2">
+              <form id="contact-form" class="flex flex-col gap-3 sm:gap-4 animate-fade-in">
+                <div class="flex flex-col sm:grid sm:grid-cols-2 gap-3 sm:gap-4">
+                  <input type="email" name="email" required placeholder="EMAIL ADDRESS" class="w-full bg-white/[0.03] border border-white/10 rounded px-3 sm:px-4 py-3 font-mono text-xs text-white placeholder-white/20 outline-none focus:border-haast-accent focus:bg-white/[0.05] transition-all">
+                  <input type="tel" name="phone" placeholder="06 NUMMER (OPTIONEEL)" class="w-full bg-white/[0.03] border border-white/10 rounded px-3 sm:px-4 py-3 font-mono text-xs text-white placeholder-white/20 outline-none focus:border-haast-accent focus:bg-white/[0.05] transition-all">
+                  <button type="submit" class="w-full sm:col-span-2 bg-white text-black font-mono text-xs font-bold uppercase tracking-widest hover:bg-haast-accent hover:text-white transition-all rounded flex items-center justify-center gap-2 py-3 active:scale-95">
+                    VERSTUREN
+                  </button>
+                </div>
+                <textarea name="message" placeholder="BRIEF / MESSAGE (OPTIONAL)" rows="3" class="w-full bg-white/[0.03] border border-white/10 rounded px-3 sm:px-4 py-3 font-mono text-xs text-white placeholder-white/20 outline-none focus:border-haast-accent focus:bg-white/[0.05] transition-all resize-none"></textarea>
+              </form>
+            </div>
+          </div>
+
+          <div class="mt-8 sm:mt-12 pt-4 sm:pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 opacity-30 hover:opacity-100 transition-opacity duration-500">
+            <span class="font-mono text-[9px] text-white uppercase">© 2025 Haast Productions.</span>
+            <button onclick="window.scrollTo({ top: 0, behavior: 'smooth'})" class="font-mono text-[9px] text-white uppercase hover:text-haast-accent">
+              Back to Top
+            </button>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+
+      // Fade in animations on scroll
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.animate-fade-in').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Portfolio preview update on scroll
+      const projectItems = document.querySelectorAll('.project-item');
+      const previewImage = document.getElementById('preview-image');
+      const projectNumber = document.getElementById('project-number');
+      
+      const projectImages = [
+        'kerstcommercial.png',
+        'kerstcommercial.png'
+      ];
+
+      const portfolioObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const index = entry.target.getAttribute('data-index');
+            if (index !== null && previewImage && projectNumber) {
+              previewImage.style.opacity = '0';
+              setTimeout(() => {
+                previewImage.src = projectImages[index];
+                projectNumber.textContent = '0' + (parseInt(index) + 1);
+                previewImage.style.opacity = '1';
+              }, 300);
+            }
+          }
+        });
+      }, { threshold: 0.5 });
+
+      projectItems.forEach(item => {
+        portfolioObserver.observe(item);
+      });
+
+      // Contact form handling
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const formData = new FormData(this);
+          const submitBtn = this.querySelector('button[type="submit"]');
+          const originalText = submitBtn.textContent;
+          
+          submitBtn.textContent = 'VERZENDEN...';
+          submitBtn.disabled = true;
+          
+          // Simulate form submission (replace with actual email service)
+          setTimeout(() => {
+            submitBtn.textContent = 'VERZONDEN';
+            submitBtn.style.backgroundColor = '#10b981';
+            submitBtn.style.color = 'white';
+            this.reset();
+            
+            setTimeout(() => {
+              submitBtn.textContent = originalText;
+              submitBtn.style.backgroundColor = '';
+              submitBtn.style.color = '';
+              submitBtn.disabled = false;
+            }, 3000);
+          }, 1500);
+        });
+      }
+    </script>
+  </body>
+</html>
+~~
