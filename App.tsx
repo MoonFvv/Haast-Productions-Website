@@ -6,12 +6,17 @@ import GearPage from './pages/GearPage';
 import AuditionPage from './pages/AuditionPage';
 import TeamPage from './pages/TeamPage';
 import ShortFilm from './pages/ShortFilm';
+import AdminPage from './pages/AdminPage';
+import AdminLoginPage from './pages/AdminLoginPage';
 import Footer from './components/Footer';
 import { useLocation } from 'react-router-dom';
+import './audition-system.css';
 
 
 function App() {
   const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith('/admin');
+  const isFullScreenRoute = ['/gear', '/team'].includes(location.pathname);
 
   useEffect(() => {
     // Allow scrolling on home page, disable on other pages that need it
@@ -35,6 +40,17 @@ function App() {
       }
     }
   }, [location]);
+
+  // Admin routes — no navbar/footer
+  if (isAdminRoute) {
+    return (
+      <Routes>
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin/login" element={<AdminLoginPage />} />
+      </Routes>
+    );
+  }
+
   return (
     <div className={`min-h-screen text-haast-text font-sans selection:bg-haast-accent selection:text-white ${location.pathname === '/' ? '' : 'bg-haast-black'}`}>
       <Navbar />
@@ -46,7 +62,7 @@ function App() {
         <Route path="/team" element={<TeamPage />} />
         <Route path="/shortfilm" element={<ShortFilm />} />
       </Routes>
-      <Footer />
+      {!isFullScreenRoute && <Footer />}
     </div>
   );
 }
