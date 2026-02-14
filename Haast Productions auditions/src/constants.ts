@@ -1,15 +1,13 @@
 
-import { Instagram, Linkedin, Music, ArrowUpRight, Play, Film, Monitor, Zap, Camera, Aperture, Disc, Cpu } from 'lucide-react';
+import { Camera, Aperture, Disc, Cpu } from 'lucide-react';
 
 export const ASSETS = {
   LOGO_TEXT: "HAAST",
 };
 
 export const NAV_LINKS = [
-  { name: 'Work', href: '#work' },
-  { name: 'Gear', href: '/gear' },
-  { name: 'Team', href: '/team' },
-  { name: 'Neem contact op', href: '#contact', primary: true },
+  { name: 'Home', href: 'http://localhost:5173/' },
+  { name: 'Auditie', href: '/' },
 ];
 
 export const GEAR_CATEGORIES = [

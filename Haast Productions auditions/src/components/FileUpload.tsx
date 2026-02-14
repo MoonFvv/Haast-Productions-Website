@@ -1,4 +1,5 @@
-import React, { useState, useRef, ChangeEvent } from 'react';
+import React, { useState, useRef } from 'react';
+import type { ChangeEvent } from 'react';
 
 interface FileUploadProps {
     id: string;
