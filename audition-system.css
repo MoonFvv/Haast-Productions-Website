@@ -78,7 +78,7 @@
 .aud-field {
   width: 100%;
   padding: 0.85rem 1rem;
-  background: #111111;
+  background: rgba(17, 17, 17, 0.7);
   border: 1px solid #1a1a1a;
   color: #ECECEC;
   border-radius: 8px;
@@ -108,7 +108,7 @@ textarea.aud-field {
 
 /* Cards */
 .aud-card {
-  background: #111111;
+  background: rgba(17, 17, 17, 0.8);
   border: 1px solid #1a1a1a;
   border-radius: 12px;
   overflow: hidden;
@@ -605,7 +605,7 @@ textarea.aud-field {
 .admin-detail-status {
   margin-bottom: 2rem;
   padding: 1.2rem 1.5rem;
-  background: #111111;
+  background: rgba(17, 17, 17, 0.7);
   border: 1px solid #1a1a1a;
   border-radius: 12px;
 }
@@ -648,7 +648,7 @@ textarea.aud-field {
 }
 
 .admin-field {
-  background: #111111;
+  background: rgba(17, 17, 17, 0.7);
   border: 1px solid #1a1a1a;
   border-radius: 10px;
   padding: 0.85rem 1rem;
@@ -715,7 +715,7 @@ textarea.aud-field {
 .admin-notes-section {
   margin-bottom: 2rem;
   padding: 1.2rem 1.5rem;
-  background: #111111;
+  background: rgba(17, 17, 17, 0.7);
   border: 1px solid #1a1a1a;
   border-radius: 12px;
 }
@@ -724,7 +724,7 @@ textarea.aud-field {
   width: 100%;
   margin-top: 0.5rem;
   padding: 0.75rem 0.9rem;
-  background: #020202;
+  background: rgba(2, 2, 2, 0.8);
   border: 1px solid #1a1a1a;
   color: #ECECEC;
   border-radius: 8px;
@@ -756,7 +756,7 @@ textarea.aud-field {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  background: #111111;
+  background: rgba(17, 17, 17, 0.7);
   border: 1px solid #1a1a1a;
   border-radius: 12px;
   padding: 1rem 1.2rem;
@@ -790,7 +790,7 @@ textarea.aud-field {
   width: 100%;
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
-  background: #020202;
+  background: rgba(2, 2, 2, 0.8);
   border: 1px solid #1a1a1a;
   color: #ECECEC;
   font-family: 'Poppins', sans-serif;
@@ -819,7 +819,7 @@ textarea.aud-field {
 .admin-q-select {
   padding: 0.4rem 0.6rem;
   border-radius: 6px;
-  background: #020202;
+  background: rgba(2, 2, 2, 0.8);
   border: 1px solid #1a1a1a;
   color: #ECECEC;
   font-family: 'Poppins', sans-serif;
@@ -853,7 +853,7 @@ textarea.aud-field {
   width: 28px;
   height: 28px;
   border-radius: 6px;
-  background: #020202;
+  background: rgba(2, 2, 2, 0.8);
   border: 1px solid #1a1a1a;
   color: #666;
   font-size: 0.75rem;
@@ -943,7 +943,7 @@ textarea.aud-field {
   flex: 1;
   padding: 0.6rem 0.9rem;
   border-radius: 8px;
-  background: #111111;
+  background: rgba(17, 17, 17, 0.7);
   border: 1px solid #1a1a1a;
   color: #ECECEC;
   font-family: 'Poppins', sans-serif;
@@ -962,7 +962,7 @@ textarea.aud-field {
 .admin-add-select {
   padding: 0.6rem 0.9rem;
   border-radius: 8px;
-  background: #111111;
+  background: rgba(17, 17, 17, 0.7);
   border: 1px solid #1a1a1a;
   color: #ECECEC;
   font-family: 'Poppins', sans-serif;
@@ -1011,7 +1011,7 @@ textarea.aud-field {
 }
 
 .admin-layout ::-webkit-scrollbar-track {
-  background: #020202;
+  background: transparent;
 }
 
 .admin-layout ::-webkit-scrollbar-thumb {
