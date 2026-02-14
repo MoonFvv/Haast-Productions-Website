@@ -1,61 +1,83 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Haast Productions - Auditions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/hitmaker" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Poppins', 'sans-serif'],
-              display: ['Hitmaker', 'sans-serif'],
-            },
-            colors: {
-              haast: {
-                black: '#020202', 
-                panel: '#111111',
-                accent: '#3b82f6',
-                text: '#ECECEC',
-                muted: '#666666',
-              }
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BMBZ9H5ME"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-1BMBZ9H5ME');
+  </script>
+  <title>Haast Productions - Auditions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/hitmaker" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+            display: ['Hitmaker', 'sans-serif'],
+          },
+          colors: {
+            haast: {
+              black: '#020202',
+              panel: '#111111',
+              accent: '#3b82f6',
+              text: '#ECECEC',
+              muted: '#666666',
             }
           }
         }
       }
-    </script>
-    <style>
-      body {
-        background-color: #020202;
-        color: #ECECEC;
-        overflow-x: hidden;
-        font-family: 'Poppins', sans-serif;
-      }
-      h1, h2, h3, h4, h5, h6, .font-display {
-        font-family: 'Hitmaker', sans-serif;
-      }
-      ::selection {
-        background: #3b82f6;
-        color: #ffffff;
-      }
-      ::-webkit-scrollbar {
-        width: 0px;
-        background: transparent;
-      }
-      .text-outline {
-        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
-        color: transparent;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    }
+  </script>
+  <style>
+    body {
+      background-color: #020202;
+      color: #ECECEC;
+      overflow-x: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .font-display {
+      font-family: 'Hitmaker', sans-serif;
+    }
+
+    ::selection {
+      background: #3b82f6;
+      color: #ffffff;
+    }
+
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+
+    .text-outline {
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+      color: transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

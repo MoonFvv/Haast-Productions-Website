@@ -1,60 +1,80 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Haast Productions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/hitmaker" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Poppins', 'sans-serif'],
-              display: ['Hitmaker', 'sans-serif'],
-            },
-            colors: {
-              haast: {
-                black: '#020202', 
-                panel: '#111111',
-                accent: '#3b82f6', // Electric Blue
-                text: '#ECECEC',
-                muted: '#666666',
-              }
-            },
-            backgroundImage: {
-              'grid-pattern': "linear-gradient(to right, #1a1a1a 1px, transparent 1px), linear-gradient(to bottom, #1a1a1a 1px, transparent 1px)",
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BMBZ9H5ME"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-1BMBZ9H5ME');
+  </script>
+  <title>Haast Productions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/hitmaker" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+            display: ['Hitmaker', 'sans-serif'],
+          },
+          colors: {
+            haast: {
+              black: '#020202',
+              panel: '#111111',
+              accent: '#3b82f6', // Electric Blue
+              text: '#ECECEC',
+              muted: '#666666',
             }
+          },
+          backgroundImage: {
+            'grid-pattern': "linear-gradient(to right, #1a1a1a 1px, transparent 1px), linear-gradient(to bottom, #1a1a1a 1px, transparent 1px)",
           }
         }
       }
-    </script>
-    <style>
-      body {
-        background-color: #020202;
-        color: #ECECEC;
-        overflow-x: hidden;
-        font-family: 'Poppins', sans-serif;
-      }
-      h1, h2, h3, h4, h5, h6, .font-display {
-        font-family: 'Hitmaker', sans-serif;
-      }
-      ::selection {
-        background: #3b82f6;
-        color: #ffffff;
-      }
-      /* Hide scrollbar for cleaner look */
-      ::-webkit-scrollbar {
-        width: 0px;
-        background: transparent;
-      }
-      .text-outline {
-        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
-        color: transparent;
-      }
-    </style>
+    }
+  </script>
+  <style>
+    body {
+      background-color: #020202;
+      color: #ECECEC;
+      overflow-x: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .font-display {
+      font-family: 'Hitmaker', sans-serif;
+    }
+
+    ::selection {
+      background: #3b82f6;
+      color: #ffffff;
+    }
+
+    /* Hide scrollbar for cleaner look */
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+
+    .text-outline {
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+      color: transparent;
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -68,10 +88,12 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>
